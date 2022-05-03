@@ -38,7 +38,7 @@ namespace eSouvenirWebApp
 
             //AddTrasient
             //komentar
-
+            //Jolin komentar
 
 
             await builder.Build().RunAsync();
