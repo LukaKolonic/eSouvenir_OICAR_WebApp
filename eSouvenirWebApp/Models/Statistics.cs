@@ -11,6 +11,8 @@ namespace eSouvenirWebApp.Models
         //public string City { get; set; }
         //public bool IsAdmin { get; set; }
 
+
+        //ovo je Jolin komentar za statistiku
         public int NbrOfPictures { get; set; }
 
         public int NbrOfVisitedCities { get; set; }
