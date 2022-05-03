@@ -7,6 +7,7 @@ namespace eSouvenirWebApp.Models
 {
     public class User
     {
+        //Komentar 2 
         //Komentar
         public int IDUser { get; set; }
         public string Username { get; set; }
