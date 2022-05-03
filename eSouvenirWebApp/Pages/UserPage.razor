@@ -1,0 +1,54 @@
+﻿@page "/userPage"
+@inject HttpClient Http
+
+
+<h3>List of users</h3>
+
+
+@if (Users == null)
+{
+    <p><em>Loading..</em></p>
+}
+else
+{
+    <table class="table  table-bordered table-light">
+        <thead>
+            <tr>
+                <th>IDUser</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Pass</th>
+                <th>IsAdmin</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Models.User user in Users)
+            {
+                <tr>
+                    <td>@user.IDUser</td>   
+                    <td>@user.Username</td>
+                    <td>@user.Email</td>
+                    <td>@ConvertByteToString(user.Pass)</td>
+                    <td>@user.IsAdmin</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Models.User> Users = new List<Models.User>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        //Users.Add(new Models.User("user9", "user9@mail.com", new byte[] { }, false));
+       
+        await Http.GetFromJsonAsync<List<Models.User>>("api/Users/get");
+        Users = await Http.GetFromJsonAsync<List<Models.User>>("api/Users/get");
+    }
+
+    private string ConvertByteToString(byte[] bytes)
+        {
+            return BitConverter.ToString(bytes).Replace("-", String.Empty);
+        }
+}

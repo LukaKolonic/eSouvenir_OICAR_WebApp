@@ -1,0 +1,47 @@
+﻿@page "/login"
+<h3>LogIn</h3>
+
+<div class="p-3">
+    <div class="col-md-3">
+        <label class="form-label">Username</label>
+        <input class="form-control" @bind="username" />
+    </div>
+    <div class="col-md-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" @bind="password" />
+    </div>
+    <div class="col-md-3">
+        <p style="color:@Color"><b>@text</b></p>
+    </div>
+    <div class="col-md-3">
+        <button type="submit" class="btn btn-success" @onclick="Submit">Submit</button>
+    </div>
+    
+</div>
+
+
+@code {
+    private string username { get; set; }
+    private string password { get; set; }
+
+    string Color = "black";
+    string text = "Hello Admin";
+
+    private void Submit()
+    {
+        if (username =="Kola" && password=="0000")
+        {
+            Color = "green";
+            text = "Welcome Kola";
+            username = "";
+            password = "";
+        }
+        else
+        {
+            Color = "red";
+            text = "Username wrong!";
+            username = "";
+            password = "";
+        }
+    }
+}
