@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 
 namespace eSouvenirWebApp.Models
 {
+
+    //Bug fixed
     public class QRCode
     {
         public int IDQRCode { get; set; }
