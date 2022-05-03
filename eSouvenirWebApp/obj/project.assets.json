@@ -7071,20 +7071,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Teodor\\.nuget\\packages\\": {}
+    "C:\\Users\\josko\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Teodor\\Desktop\\eSouvenirWebApp\\eSouvenirWebApp\\eSouvenirWebApp.csproj",
+      "projectUniqueName": "C:\\Users\\josko\\OneDrive\\Desktop\\WebAppOICAR\\eSouvenirWebApp\\eSouvenirWebApp.csproj",
       "projectName": "eSouvenirWebApp",
-      "projectPath": "C:\\Users\\Teodor\\Desktop\\eSouvenirWebApp\\eSouvenirWebApp\\eSouvenirWebApp.csproj",
-      "packagesPath": "C:\\Users\\Teodor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Teodor\\Desktop\\eSouvenirWebApp\\eSouvenirWebApp\\obj\\",
+      "projectPath": "C:\\Users\\josko\\OneDrive\\Desktop\\WebAppOICAR\\eSouvenirWebApp\\eSouvenirWebApp.csproj",
+      "packagesPath": "C:\\Users\\josko\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\josko\\OneDrive\\Desktop\\WebAppOICAR\\eSouvenirWebApp\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Teodor\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\josko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -7156,7 +7164,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.NETCore.App.Runtime.browser-wasm",
-            "version": "[5.0.15, 5.0.15]"
+            "version": "[5.0.9, 5.0.9]"
           }
         ],
         "frameworkReferences": {
@@ -7164,7 +7172,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {
