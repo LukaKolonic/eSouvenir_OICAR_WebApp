@@ -1064,7 +1064,6 @@ C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\eSouven
 C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\eSouvenirWebApp.RazorComponent.input.cache
 C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
 C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\RazorDeclaration\Pages\LogIn.razor.g.cs
-C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\RazorDeclaration\Pages\UserPage.razor.g.cs
 C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\RazorDeclaration\Pages\UserStatistics.razor.g.cs
 C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
 C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
@@ -1077,7 +1076,6 @@ C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\eSouven
 C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\eSouvenirWebApp.RazorCoreGenerate.cache
 C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\Razor\App.razor.g.cs
 C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\Razor\Pages\LogIn.razor.g.cs
-C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\Razor\Pages\UserPage.razor.g.cs
 C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\Razor\Pages\UserStatistics.razor.g.cs
 C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\Razor\Shared\SurveyPrompt.razor.g.cs
 C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
@@ -1986,3 +1984,5 @@ C:\Users\josko\OneDrive\Desktop\WebAppOICAR\eSouvenirWebApp\obj\Debug\net5.0\eSo
 C:\Users\josko\OneDrive\Desktop\WebAppOICAR\eSouvenirWebApp\obj\Debug\net5.0\eSouvenirWebApp.dll
 C:\Users\josko\OneDrive\Desktop\WebAppOICAR\eSouvenirWebApp\obj\Debug\net5.0\ref\eSouvenirWebApp.dll
 C:\Users\josko\OneDrive\Desktop\WebAppOICAR\eSouvenirWebApp\obj\Debug\net5.0\eSouvenirWebApp.pdb
+C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\RazorDeclaration\Pages\UserDetails.razor.g.cs
+C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\Razor\Pages\UserDetails.razor.g.cs

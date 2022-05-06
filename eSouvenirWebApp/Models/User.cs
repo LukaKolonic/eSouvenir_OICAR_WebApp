@@ -12,6 +12,7 @@ namespace eSouvenirWebApp.Models
         public string Username { get; set; }
         public string Email { get; set; }
         public byte[] Pass { get; set; }
+        public string PassString { get; set; }
 
         public bool IsAdmin { get; set; }
 

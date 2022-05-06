@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "6c2zXgRikdu8m//xa7yFP3nwCux4O31cJcSZMQjiHpI2f244htshTc1ZJn9v4B1abIndrK8FLfQEI5ERjmM9+Q==",
+  "dgSpecHash": "9E+UwhxFO9bgycJt5e8ulS9WYAJWe9xhiJxQm/0fM77QOUUxUpGTmEwWgD3Z4J/eWLguftw7Cdyfw/avsyEzCA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Teodor\\Desktop\\eSouvenirWebApp\\eSouvenirWebApp\\eSouvenirWebApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Teodor\\.nuget\\packages\\blazorise.datagrid\\1.0.4\\blazorise.datagrid.1.0.4.nupkg.sha512",
     "C:\\Users\\Teodor\\.nuget\\packages\\igniteui.blazor\\21.2.52\\igniteui.blazor.21.2.52.nupkg.sha512",
     "C:\\Users\\Teodor\\.nuget\\packages\\libsassbuilder\\2.0.1\\libsassbuilder.2.0.1.nupkg.sha512",
     "C:\\Users\\Teodor\\.nuget\\packages\\microsoft.aspnet.cors\\5.2.8\\microsoft.aspnet.cors.5.2.8.nupkg.sha512",
