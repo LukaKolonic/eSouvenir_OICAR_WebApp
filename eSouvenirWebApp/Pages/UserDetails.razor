@@ -1,0 +1,39 @@
+﻿@page "/userDetails"
+@inject HttpClient Http
+ 
+
+<h1>Users details</h1>
+
+<RadzenGrid AllowPaging="true" AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" 
+            PageSize="5" AllowSorting="true" Data="@Users"  ColumnWidth="150px">
+    <Columns>
+        <RadzenGridColumn TItem="Models.User" Property="Username" Title="Username"></RadzenGridColumn>
+        <RadzenGridColumn TItem="Models.User" Property="Email" Title="Email"></RadzenGridColumn>
+        <RadzenGridColumn TItem="Models.User" Property="PassString" Title="Pasword"></RadzenGridColumn>
+        <RadzenGridColumn TItem="Models.User" Property="IsAdmin" Title="IsAdmin"></RadzenGridColumn>
+    </Columns>
+</RadzenGrid>
+
+@code {
+
+    private List<Models.User> Users = new List<Models.User>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        //Users.Add(new Models.User("user9", "user9@mail.com", new byte[] { }, false));
+
+        await Http.GetFromJsonAsync<List<Models.User>>("api/Users/get");
+        Users = await Http.GetFromJsonAsync<List<Models.User>>("api/Users/get");
+
+        foreach (var item in Users)
+        {
+            item.PassString=ConvertByteToString(item.Pass);
+        }
+    }
+
+    private string ConvertByteToString(byte[] bytes)
+    {
+        return BitConverter.ToString(bytes).Replace("-", String.Empty);
+    }
+
+}

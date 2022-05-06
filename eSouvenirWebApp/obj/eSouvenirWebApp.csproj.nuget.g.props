@@ -22,6 +22,7 @@
     <Import Project="$(NuGetPackageRoot)radzen.blazor\3.18.4\buildTransitive\Radzen.Blazor.props" Condition="Exists('$(NuGetPackageRoot)radzen.blazor\3.18.4\buildTransitive\Radzen.Blazor.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly\5.0.15\build\net5.0\Microsoft.AspNetCore.Components.WebAssembly.props" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly\5.0.15\build\net5.0\Microsoft.AspNetCore.Components.WebAssembly.props')" />
     <Import Project="$(NuGetPackageRoot)igniteui.blazor\21.2.52\buildTransitive\IgniteUI.Blazor.props" Condition="Exists('$(NuGetPackageRoot)igniteui.blazor\21.2.52\buildTransitive\IgniteUI.Blazor.props')" />
+    <Import Project="$(NuGetPackageRoot)blazorise.datagrid\1.0.4\buildTransitive\Blazorise.DataGrid.props" Condition="Exists('$(NuGetPackageRoot)blazorise.datagrid\1.0.4\buildTransitive\Blazorise.DataGrid.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Users\Teodor\.nuget\packages\newtonsoft.json\10.0.1</PkgNewtonsoft_Json>
