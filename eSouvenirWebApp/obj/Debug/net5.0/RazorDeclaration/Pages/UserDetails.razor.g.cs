@@ -105,8 +105,10 @@ using Radzen.Blazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 17 "C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\Pages\UserDetails.razor"
+#line 28 "C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\Pages\UserDetails.razor"
        
+
+
 
     private List<Models.User> Users = new List<Models.User>();
 
@@ -114,12 +116,12 @@ using Radzen.Blazor;
     {
         //Users.Add(new Models.User("user9", "user9@mail.com", new byte[] { }, false));
 
-        await Http.GetFromJsonAsync<List<Models.User>>("api/Users/get");
+        //await Http.GetFromJsonAsync<List<Models.User>>("api/Users/get");
         Users = await Http.GetFromJsonAsync<List<Models.User>>("api/Users/get");
 
         foreach (var item in Users)
         {
-            item.PassString=ConvertByteToString(item.Pass);
+            item.PassString = ConvertByteToString(item.Pass);
         }
     }
 
@@ -128,10 +130,26 @@ using Radzen.Blazor;
         return BitConverter.ToString(bytes).Replace("-", String.Empty);
     }
 
+    async Task RemoveUser(Models.User user)
+    {
+
+        await JsRuntime.InvokeVoidAsync("alert", "Warning!"); // Alert
+
+        bool confirmed = await JsRuntime.InvokeAsync<bool>("confirm", "Are you sure?"); // Confirm
+        if (confirmed)
+        {
+            await Http.PostAsJsonAsync("api/Users/updateUser", user);
+            await OnInitializedAsync();
+
+        }
+
+    }
+
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JsRuntime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }
     }
 }
