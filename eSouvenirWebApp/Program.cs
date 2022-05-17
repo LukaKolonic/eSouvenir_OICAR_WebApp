@@ -34,7 +34,7 @@ namespace eSouvenirWebApp
             builder.Services.AddScoped<TooltipService>();
             builder.Services.AddScoped<ContextMenuService>();
 
-            
+          
 
             //AddTrasient
             //komentar
