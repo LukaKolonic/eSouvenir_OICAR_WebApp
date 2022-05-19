@@ -1736,7 +1736,6 @@ C:\Users\josko\OneDrive\Desktop\WebAppOICAR\eSouvenirWebApp\bin\Debug\net5.0\www
 C:\Users\josko\OneDrive\Desktop\WebAppOICAR\eSouvenirWebApp\bin\Debug\net5.0\wwwroot\_framework\icudt_EFIGS.dat
 C:\Users\josko\OneDrive\Desktop\WebAppOICAR\eSouvenirWebApp\bin\Debug\net5.0\wwwroot\_framework\icudt_no_CJK.dat
 C:\Users\josko\OneDrive\Desktop\WebAppOICAR\eSouvenirWebApp\bin\Debug\net5.0\wwwroot\_framework\dotnet.5.0.9.js
-C:\Users\josko\OneDrive\Desktop\WebAppOICAR\eSouvenirWebApp\obj\Debug\net5.0\eSouvenirWebApp.csproj.AssemblyReference.cache
 C:\Users\josko\OneDrive\Desktop\WebAppOICAR\eSouvenirWebApp\obj\Debug\net5.0\eSouvenirWebApp.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\josko\OneDrive\Desktop\WebAppOICAR\eSouvenirWebApp\obj\Debug\net5.0\eSouvenirWebApp.AssemblyInfoInputs.cache
 C:\Users\josko\OneDrive\Desktop\WebAppOICAR\eSouvenirWebApp\obj\Debug\net5.0\eSouvenirWebApp.AssemblyInfo.cs

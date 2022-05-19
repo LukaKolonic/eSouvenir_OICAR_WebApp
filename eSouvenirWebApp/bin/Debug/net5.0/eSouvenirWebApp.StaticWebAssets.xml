@@ -1,9 +1,9 @@
 ﻿<StaticWebAssets Version="1.0">
-  <ContentRoot BasePath="/" Path="C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\bin\Debug\net5.0\wwwroot\" />
-  <ContentRoot BasePath="/" Path="C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\scopedcss\bundle\" />
-  <ContentRoot BasePath="_content/IgniteUI.Blazor" Path="C:\Users\Teodor\.nuget\packages\igniteui.blazor\21.2.52\build\..\staticwebassets\" />
-  <ContentRoot BasePath="_content/Radzen.Blazor" Path="C:\Users\Teodor\.nuget\packages\radzen.blazor\3.18.4\build\..\staticwebassets\" />
-  <ContentRoot BasePath="_content/Syncfusion.Blazor.Charts" Path="C:\Users\Teodor\.nuget\packages\syncfusion.blazor.charts\20.1.0.50\build\..\staticwebassets\" />
-  <ContentRoot BasePath="_content/Syncfusion.Blazor.Core" Path="C:\Users\Teodor\.nuget\packages\syncfusion.blazor.core\20.1.0.50\build\..\staticwebassets\" />
-  <ContentRoot BasePath="_content/Syncfusion.Blazor.Data" Path="C:\Users\Teodor\.nuget\packages\syncfusion.blazor.data\20.1.0.50\build\..\staticwebassets\" />
+  <ContentRoot BasePath="/" Path="C:\Users\josko\OneDrive\Desktop\WebAppOICAR\eSouvenirWebApp\bin\Debug\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Users\josko\OneDrive\Desktop\WebAppOICAR\eSouvenirWebApp\obj\Debug\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="_content/IgniteUI.Blazor" Path="C:\Users\josko\.nuget\packages\igniteui.blazor\21.2.52\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/Radzen.Blazor" Path="C:\Users\josko\.nuget\packages\radzen.blazor\3.18.4\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/Syncfusion.Blazor.Charts" Path="C:\Users\josko\.nuget\packages\syncfusion.blazor.charts\20.1.0.50\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/Syncfusion.Blazor.Core" Path="C:\Users\josko\.nuget\packages\syncfusion.blazor.core\20.1.0.50\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/Syncfusion.Blazor.Data" Path="C:\Users\josko\.nuget\packages\syncfusion.blazor.data\20.1.0.50\build\..\staticwebassets\" />
 </StaticWebAssets>
