@@ -96,13 +96,6 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 2 "C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\Pages\UserStatistics.razor"
-using System.Globalization;
-
-#line default
-#line hidden
-#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/userStatistics")]
     public partial class UserStatistics : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -112,43 +105,37 @@ using System.Globalization;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 17 "C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\Pages\UserStatistics.razor"
+#line 24 "C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\Pages\UserStatistics.razor"
        
-    class DataItem
+
+    private List<Models.User> Users = new List<Models.User>();
+
+    protected override async Task OnInitializedAsync()
     {
-        public string Username { get; set; }
-        public int NbrOfVisitedCities { get; set; }
-        public int NbrOfPictures { get; set; }
+        //Users.Add(new Models.User("user9", "user9@mail.com", new byte[] { }, false));
+
+        //await Http.GetFromJsonAsync<List<Models.User>>("api/Users/get");
+        Users = await Http.GetFromJsonAsync<List<Models.User>>("api/Users/get");
+
+        foreach (var item in Users)
+        {
+            item.PassString = ConvertByteToString(item.Pass);
+        }
     }
 
-    
+    private string ConvertByteToString(byte[] bytes)
+    {
+        return BitConverter.ToString(bytes).Replace("-", String.Empty);
+    }
 
-    DataItem[] visitedCities = new DataItem[] {
-        new DataItem
-        { Username = "Luka", NbrOfVisitedCities=1 },
-        new DataItem
-        { Username = "Matea", NbrOfVisitedCities=20 },
-        new DataItem
-        { Username = "Karlo", NbrOfVisitedCities=4 },
-        new DataItem
-        { Username = "Jole", NbrOfVisitedCities=2 }
-    };
+   
 
-    DataItem[] uploadedPictures = new DataItem[] {
-        new DataItem
-        { Username = "Luka", NbrOfPictures=9 },
-        new DataItem
-        { Username = "Matea", NbrOfPictures=90 },
-        new DataItem
-        { Username = "Karlo", NbrOfPictures=13 },
-        new DataItem
-        { Username = "Jole", NbrOfPictures=2 }
 
-    };
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }
     }
 }
 #pragma warning restore 1591

@@ -1,0 +1,49 @@
+﻿@page "/statistics"
+@using System.Globalization
+
+<h1>Radzen Blazor Chart column series</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 my-5">
+            <RadzenChart>
+                <RadzenColumnSeries Data="@visitedCities" CategoryProperty="Username" Title="Visited cities" LineType="LineType.Dashed" ValueProperty="NbrOfVisitedCities" />
+                <RadzenColumnSeries Data="@uploadedPictures" CategoryProperty="Username" Title="Uploaded pics" ValueProperty="NbrOfPictures" />
+                <RadzenColumnOptions Radius="5" />
+                
+            </RadzenChart>
+        </div>
+    </div>
+</div>
+@code {
+    class DataItem
+    {
+        public string Username { get; set; }
+        public int NbrOfVisitedCities { get; set; }
+        public int NbrOfPictures { get; set; }
+    }
+
+    
+
+    DataItem[] visitedCities = new DataItem[] {
+        new DataItem
+        { Username = "Luka", NbrOfVisitedCities=1 },
+        new DataItem
+        { Username = "Matea", NbrOfVisitedCities=20 },
+        new DataItem
+        { Username = "Karlo", NbrOfVisitedCities=4 },
+        new DataItem
+        { Username = "Jole", NbrOfVisitedCities=2 }
+    };
+
+    DataItem[] uploadedPictures = new DataItem[] {
+        new DataItem
+        { Username = "Luka", NbrOfPictures=9 },
+        new DataItem
+        { Username = "Matea", NbrOfPictures=90 },
+        new DataItem
+        { Username = "Karlo", NbrOfPictures=13 },
+        new DataItem
+        { Username = "Jole", NbrOfPictures=2 }
+
+    };
+}
