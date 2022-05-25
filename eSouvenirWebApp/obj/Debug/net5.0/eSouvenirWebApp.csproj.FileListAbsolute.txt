@@ -1988,3 +1988,5 @@ C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\RazorDe
 C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\Razor\Pages\Statistics.razor.g.cs
 C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\RazorDeclaration\Pages\UserStatistics.razor.g.cs
 C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\Razor\Pages\UserStatistics.razor.g.cs
+C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\RazorDeclaration\Pages\CityStatistics.razor.g.cs
+C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\Razor\Pages\CityStatistics.razor.g.cs

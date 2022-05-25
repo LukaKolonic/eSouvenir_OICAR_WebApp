@@ -7,11 +7,12 @@
 <RadzenGrid  AllowPaging="true" AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
             PageSize="5" AllowSorting="true" Data="@Users" ColumnWidth="150px">
     <Columns>
-        <RadzenGridColumn TItem="Models.User" Property="IDUser" Title="ID"></RadzenGridColumn>
+        <RadzenGridColumn TItem="Models.User" Property="IDUser" Title="ID"  Width="30px"></RadzenGridColumn>
         <RadzenGridColumn TItem="Models.User" Property="Username" Title="Username"></RadzenGridColumn>
         <RadzenGridColumn TItem="Models.User" Property="Email" Title="Email"></RadzenGridColumn>
         <RadzenGridColumn TItem="Models.User" Property="PassString" Title="Pasword"></RadzenGridColumn>
         <RadzenGridColumn TItem="Models.User" Property="IsAdmin" Title="IsAdmin"></RadzenGridColumn>
+        <RadzenGridColumn TItem="Models.User" Property="IsDeleted" Title="IsDeleted"></RadzenGridColumn>
         <RadzenGridColumn TItem="Models.User" Title="Remove user" Filterable="false" Sortable="false" TextAlign="TextAlign.Center" Width="60px">
             <Template Context="user">
                 <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="delete_forever" Size="ButtonSize.Small" Class="m-1" Click="@(args => RemoveUser(user))" @onclick:stopPropagation="true"></RadzenButton>

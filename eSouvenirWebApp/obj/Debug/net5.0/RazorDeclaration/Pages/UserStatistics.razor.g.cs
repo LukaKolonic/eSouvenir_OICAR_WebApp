@@ -128,9 +128,7 @@ using Radzen.Blazor;
         return BitConverter.ToString(bytes).Replace("-", String.Empty);
     }
 
-   
-
-
+  
 
 #line default
 #line hidden

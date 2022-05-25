@@ -104,7 +104,7 @@ using Radzen.Blazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 35 "C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\Shared\NavMenu.razor"
+#line 40 "C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 
