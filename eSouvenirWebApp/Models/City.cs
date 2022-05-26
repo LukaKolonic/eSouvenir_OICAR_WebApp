@@ -9,8 +9,9 @@ namespace eSouvenirWebApp.Models
     {
         public int IDCity { get; set; }
         public string Name { get; set; }
-        public int Pictures { get; set; }
-
+        
         public int NbrOfQrCodes { get; set; } = 0;
+        public int NbrOfUsers { get; set; } = 0;
+
     }
 }
