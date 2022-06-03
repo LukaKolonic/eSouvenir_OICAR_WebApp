@@ -17,6 +17,10 @@ namespace eSouvenirWebApp.Models
         public bool IsAdmin { get; set; }
         public bool IsDeleted { get; set; }
 
+        public int NbrOfVisitedCities { get; set; }
+        public int NbrOfPictures { get; set; }
+        public int NbrOfQRCodes { get; set; }
+
         public ICollection<QRCode> QRCodes { get; set; }
 
         public User(string username, string email, byte[] pass, bool isAdmin, bool isDeleted)

@@ -105,17 +105,22 @@ using Radzen.Blazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 24 "C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\Pages\UserStatistics.razor"
+#line 39 "C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\Pages\UserStatistics.razor"
        
 
     private List<Models.User> Users = new List<Models.User>();
+    private List<Models.QRCode> QRCodes = new List<Models.QRCode>();
+    private List<Models.City> Cities = new List<Models.City>();
+
+    public int Broj { get; set; }
+    public int IdUserClicked { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        //Users.Add(new Models.User("user9", "user9@mail.com", new byte[] { }, false));
 
-        //await Http.GetFromJsonAsync<List<Models.User>>("api/Users/get");
         Users = await Http.GetFromJsonAsync<List<Models.User>>("api/Users/get");
+        QRCodes = await Http.GetFromJsonAsync<List<Models.QRCode>>("api/QRCode/get");
+        Cities = await Http.GetFromJsonAsync<List<Models.City>>("api/Cities/get");
 
         foreach (var item in Users)
         {
@@ -128,7 +133,26 @@ using Radzen.Blazor;
         return BitConverter.ToString(bytes).Replace("-", String.Empty);
     }
 
-  
+    private void GetStatistics(Models.User user)
+    {
+        IdUserClicked = user.IDUser;
+        foreach (var city in Cities)
+        {
+            foreach (var qr in QRCodes)
+            {
+                if (qr.UserID==user.IDUser && qr.CityID==city.IDCity)
+                {
+                    user.NbrOfVisitedCities++;
+                    break;
+                }
+            }
+        }
+
+        Broj = user.NbrOfVisitedCities;
+
+    }
+
+
 
 #line default
 #line hidden

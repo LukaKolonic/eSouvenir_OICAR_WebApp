@@ -23,7 +23,7 @@ namespace eSouvenirWebApp
             builder.RootComponents.Add<App>("#app");
             builder.Services.AddScoped<IUserService, UserService>();
             
-            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://esouvenir01.eu-central-1.elasticbeanstalk.com/") });
+            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://oicartim04app.azurewebsites.net") });
             //builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:44377/") });
             //builder.Services.AddScoped(typeof(IIgniteUIBlazor), typeof(IgniteUIBlazor));
             //builder.Services.AddScoped(typeof(ISyncfusionStringLocalizer), typeof(SyncfusionStringLocalizer));
