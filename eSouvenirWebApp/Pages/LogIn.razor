@@ -1,48 +1,81 @@
 ﻿@page "/login"
+@inject HttpClient Http
+@using System.Security.Cryptography
+@using System.Text
 <h3>LogIn</h3>
 
 <div class="p-3">
     <div class="col-md-3">
         <label class="form-label">Username</label>
-        <input class="form-control" @bind="username" />
+        <input class="form-control" @bind="Username" />
     </div>
     <div class="col-md-3">
         <label class="form-label">Password</label>
-        <input type="password" class="form-control" @bind="password" />
+        <input type="password" class="form-control" @bind="Password" />
     </div>
     <div class="col-md-3">
-        <p style="color:@Color"><b>@text</b></p>
+        <p style="color:@color"><b>@text</b></p>
     </div>
     <div class="col-md-3">
         <button type="submit" class="btn btn-success" @onclick="Submit">Submit</button>
     </div>
-    
+
 </div>
 
 
 
 @code {
-    private string username { get; set; }
-    private string password { get; set; }
+    private string Username { get; set; }
+    private string Password { get; set; }
+    public Models.User UserToLogin { get; set; }
 
-    string Color = "black";
-    string text = "Hello Admin";
+    string color = "black";
+    string text = "Please insert username and password!";
 
-    private void Submit()
+    private async void Submit()
     {
-        if (username =="Kola" && password=="0000")
+        Models.User user = new Models.User(Username, null, Password, true, false);
+
+        //text = "Loading...";
+        var response = await Http.PostAsJsonAsync("api/Login/LoginAdmin", user);
+        Console.WriteLine(response);
+        Console.WriteLine(response.Content);
+        Console.WriteLine(response.StatusCode);
+        // Console.WriteLine(response.Content.ReadAsAsync<int>().Result);
+
+       
+        var id = response.Content.ReadFromJsonAsync<int>().Result;
+        
+        //Console.WriteLine(id);
+        //UserToLogin = response.Content.ReadFromJsonAsync<Models.User>().Result;
+
+        if (id < 1)
         {
-            Color = "green";
-            text = "Welcome Kola";
-            username = "";
-            password = "";
+            color = "red";
+            text = "Incorect username or password!";
+            StateHasChanged();
         }
         else
         {
-            Color = "red";
-            text = "Username wrong!";
-            username = "";
-            password = "";
+            color = "green";
+            text = "Welcome " + Username + "!";
+            StateHasChanged();
         }
+
+
+    }
+
+    private byte[] ConvertToHash(string pass)
+    {
+        using (SHA512 sha512Hash = SHA512.Create())
+        {
+            //From String to byte array
+            byte[] bytes = sha512Hash.ComputeHash(Encoding.UTF8.GetBytes(pass));
+            string hash = BitConverter.ToString(bytes).Replace("-", String.Empty);
+
+            Console.WriteLine("The SHA512 hash of " + pass + " is: " + hash);
+            return bytes;
+        }
+
     }
 }

@@ -1989,3 +1989,4 @@ C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\eSouven
 C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\eSouvenirWebApp.dll
 C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\ref\eSouvenirWebApp.dll
 C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\eSouvenirWebApp.pdb
+C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\obj\Debug\net5.0\eSouvenirWebApp.csproj.AssemblyReference.cache

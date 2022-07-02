@@ -11,8 +11,8 @@ namespace eSouvenirWebApp.Models
         public int IDUser { get; set; }
         public string Username { get; set; }
         public string Email { get; set; }
-        public byte[] Pass { get; set; }
-        public string PassString { get; set; }
+        public byte[] Password { get; set; }
+        public string Pass { get; set; }
 
         public bool IsAdmin { get; set; }
         public bool IsDeleted { get; set; }
@@ -23,13 +23,20 @@ namespace eSouvenirWebApp.Models
 
         public ICollection<QRCode> QRCodes { get; set; }
 
-        public User(string username, string email, byte[] pass, bool isAdmin, bool isDeleted)
+        public User(string username, string email, string pass, bool isAdmin, bool isDeleted)
         {
             Username = username;
             Email = email;
             Pass = pass;
             IsAdmin = isAdmin;
             IsDeleted = isDeleted; 
+        }
+
+
+
+        public override string ToString()
+        {
+            return Username;
         }
     }
 }

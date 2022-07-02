@@ -96,6 +96,20 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\Pages\LogIn.razor"
+using System.Security.Cryptography;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\Pages\LogIn.razor"
+using System.Text;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/login")]
     public partial class LogIn : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -105,35 +119,66 @@ using Radzen.Blazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 24 "C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\Pages\LogIn.razor"
+#line 27 "C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\Pages\LogIn.razor"
        
-    private string username { get; set; }
-    private string password { get; set; }
+    private string Username { get; set; }
+    private string Password { get; set; }
+    public Models.User UserToLogin { get; set; }
 
-    string Color = "black";
-    string text = "Hello Admin";
+    string color = "black";
+    string text = "Please insert username and password!";
 
-    private void Submit()
+    private async void Submit()
     {
-        if (username =="Kola" && password=="0000")
+        Models.User user = new Models.User(Username, null, Password, true, false);
+
+        //text = "Loading...";
+        var response = await Http.PostAsJsonAsync("api/Login/LoginAdmin", user);
+        Console.WriteLine(response);
+        Console.WriteLine(response.Content);
+        Console.WriteLine(response.StatusCode);
+        // Console.WriteLine(response.Content.ReadAsAsync<int>().Result);
+
+       
+        var id = response.Content.ReadFromJsonAsync<int>().Result;
+        
+        //Console.WriteLine(id);
+        //UserToLogin = response.Content.ReadFromJsonAsync<Models.User>().Result;
+
+        if (id < 1)
         {
-            Color = "green";
-            text = "Welcome Kola";
-            username = "";
-            password = "";
+            color = "red";
+            text = "Incorect username or password!";
+            StateHasChanged();
         }
         else
         {
-            Color = "red";
-            text = "Username wrong!";
-            username = "";
-            password = "";
+            color = "green";
+            text = "Welcome " + Username + "!";
+            StateHasChanged();
         }
+
+
+    }
+
+    private byte[] ConvertToHash(string pass)
+    {
+        using (SHA512 sha512Hash = SHA512.Create())
+        {
+            //From String to byte array
+            byte[] bytes = sha512Hash.ComputeHash(Encoding.UTF8.GetBytes(pass));
+            string hash = BitConverter.ToString(bytes).Replace("-", String.Empty);
+
+            Console.WriteLine("The SHA512 hash of " + pass + " is: " + hash);
+            return bytes;
+        }
+
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }
     }
 }
 #pragma warning restore 1591

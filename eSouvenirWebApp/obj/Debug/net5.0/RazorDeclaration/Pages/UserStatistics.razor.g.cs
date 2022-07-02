@@ -105,15 +105,20 @@ using Radzen.Blazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 39 "C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\Pages\UserStatistics.razor"
+#line 46 "C:\Users\Teodor\Desktop\eSouvenirWebApp\eSouvenirWebApp\Pages\UserStatistics.razor"
        
+
 
     private List<Models.User> Users = new List<Models.User>();
     private List<Models.QRCode> QRCodes = new List<Models.QRCode>();
     private List<Models.City> Cities = new List<Models.City>();
+    private List<Models.User> UserToShow = new List<Models.User>();
 
-    public int Broj { get; set; }
+
+    public int BrojGradova { get; set; }
+    public int BrojKodova { get; set; }
     public int IdUserClicked { get; set; }
+    
 
     protected override async Task OnInitializedAsync()
     {
@@ -124,8 +129,12 @@ using Radzen.Blazor;
 
         foreach (var item in Users)
         {
-            item.PassString = ConvertByteToString(item.Pass);
+            item.Pass = ConvertByteToString(item.Password);
         }
+
+        Count();
+        CountQRCodes();
+
     }
 
     private string ConvertByteToString(byte[] bytes)
@@ -135,21 +144,50 @@ using Radzen.Blazor;
 
     private void GetStatistics(Models.User user)
     {
+        UserToShow.Clear();
+        UserToShow.Add(user);
         IdUserClicked = user.IDUser;
-        foreach (var city in Cities)
+        BrojGradova = user.NbrOfVisitedCities;
+        BrojKodova = user.NbrOfQRCodes;
+
+    }
+
+    private void Count()
+    {
+        foreach (var user in Users)
         {
-            foreach (var qr in QRCodes)
+            foreach (var city in Cities)
             {
-                if (qr.UserID==user.IDUser && qr.CityID==city.IDCity)
+                foreach (var qr in QRCodes)
                 {
-                    user.NbrOfVisitedCities++;
-                    break;
+                    if (qr.UserID == user.IDUser && qr.CityID == city.IDCity)
+                    {
+                        user.NbrOfVisitedCities++;
+                        break;
+                    }
                 }
+
             }
         }
 
-        Broj = user.NbrOfVisitedCities;
+    }
 
+    private void CountQRCodes()
+    {
+        foreach (var user in Users)
+        {
+
+            foreach (var qr in QRCodes)
+            {
+                if (qr.UserID == user.IDUser)
+                {
+                    user.NbrOfQRCodes++;
+
+                }
+            }
+
+
+        }
     }
 
 

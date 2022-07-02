@@ -121,7 +121,7 @@ using Radzen.Blazor;
 
         foreach (var item in Users)
         {
-            item.PassString = ConvertByteToString(item.Pass);
+            item.Pass = ConvertByteToString(item.Password);
         }
     }
 

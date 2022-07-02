@@ -211,11 +211,11 @@
       "mscorlib.dll": "sha256-CbcIR45\/xUFaZJqGIle6bb7v2kWYjp4kOFpKNnCkd4I=",
       "netstandard.dll": "sha256-qE0Q70OyVlHYY\/Y3nwMjfh+zissea9uhfvWMvPWfI7w=",
       "System.Private.CoreLib.dll": "sha256-pdkcl2+OojCfrhxX5eFmKI30wAmhL6s+sCLp7s175k0=",
-      "eSouvenirWebApp.dll": "sha256-nwQAC1Y0uiMN3vP8P8jsCdH5OT+TeCImPj\/Ji\/z6\/r0="
+      "eSouvenirWebApp.dll": "sha256-WhygDXwf4\/\/zdIjVsbmspphHJcAmXGhDn53mkOCDlsM="
     },
     "lazyAssembly": null,
     "pdb": {
-      "eSouvenirWebApp.pdb": "sha256-chyqQKuOL62S+Qht1EAaE6CfOOUDxvk3UYxO1ztdv0w="
+      "eSouvenirWebApp.pdb": "sha256-FAEpZgpE4rzpMtCU+lMc0ibnyybFJwGwcplKAcKYwlY="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-ootDKSA6cNAbgJLmPhrHsPVvVqkGEYdRZxucC22LWjw=",

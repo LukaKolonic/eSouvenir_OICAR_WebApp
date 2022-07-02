@@ -12,7 +12,7 @@
         <RadzenGridColumn TItem="Models.User" Property="Username" Title="Username"></RadzenGridColumn>
         <RadzenGridColumn TItem="Models.User" Property="IsAdmin" Title="IsAdmin"></RadzenGridColumn>
         <RadzenGridColumn TItem="Models.User" Title="User statistics" Filterable="false" Sortable="false" TextAlign="TextAlign.Center" Width="60px">
-            <Template Context="user" >
+            <Template Context="user">
                 <RadzenButton ButtonStyle="ButtonStyle.Info" Icon="assessment" Size="ButtonSize.Medium" Class="m-1" Click="@(args => GetStatistics(user))" @onclick:stopPropagation="true"></RadzenButton>
             </Template>
         </RadzenGridColumn>
@@ -25,10 +25,14 @@
     <div class="row">
         <div class="col-sm-12 my-5">
             <RadzenChart>
-                <RadzenColumnSeries Data="@Users.Where(u => u.IDUser==IdUserClicked)" CategoryProperty="Username" Title="Visited cities" LineType="LineType.Dashed" ValueProperty="NbrOfVisitedCities" />
-                @*<RadzenColumnSeries Data="@uploadedPictures" CategoryProperty="Username" Title="Uploaded pics" ValueProperty="NbrOfPictures" />*@
+                <RadzenColumnSeries Data="@UserToShow" CategoryProperty="Username" Title="Visited cities" LineType="LineType.Dashed" ValueProperty="NbrOfVisitedCities" />
+                <RadzenColumnSeries  Data="@UserToShow" CategoryProperty="Username" Title="Number of QR Codes" LineType="LineType.Dashed" ValueProperty="NbrOfQRCodes" />
+                <RadzenValueAxis Min="0" Max="6" Step="2">
+                    <RadzenGridLines Visible="true" />
+                </RadzenValueAxis>
                 <RadzenColumnOptions Radius="3" />
-
+                <RadzenCategoryAxis Padding="400">
+                </RadzenCategoryAxis>
             </RadzenChart>
         </div>
     </div>
@@ -36,14 +40,22 @@
 
 
 
+
+
+
 @code {
+
 
     private List<Models.User> Users = new List<Models.User>();
     private List<Models.QRCode> QRCodes = new List<Models.QRCode>();
     private List<Models.City> Cities = new List<Models.City>();
+    private List<Models.User> UserToShow = new List<Models.User>();
 
-    public int Broj { get; set; }
+
+    public int BrojGradova { get; set; }
+    public int BrojKodova { get; set; }
     public int IdUserClicked { get; set; }
+    
 
     protected override async Task OnInitializedAsync()
     {
@@ -54,8 +66,12 @@
 
         foreach (var item in Users)
         {
-            item.PassString = ConvertByteToString(item.Pass);
+            item.Pass = ConvertByteToString(item.Password);
         }
+
+        Count();
+        CountQRCodes();
+
     }
 
     private string ConvertByteToString(byte[] bytes)
@@ -65,21 +81,50 @@
 
     private void GetStatistics(Models.User user)
     {
+        UserToShow.Clear();
+        UserToShow.Add(user);
         IdUserClicked = user.IDUser;
-        foreach (var city in Cities)
+        BrojGradova = user.NbrOfVisitedCities;
+        BrojKodova = user.NbrOfQRCodes;
+
+    }
+
+    private void Count()
+    {
+        foreach (var user in Users)
         {
-            foreach (var qr in QRCodes)
+            foreach (var city in Cities)
             {
-                if (qr.UserID==user.IDUser && qr.CityID==city.IDCity)
+                foreach (var qr in QRCodes)
                 {
-                    user.NbrOfVisitedCities++;
-                    break;
+                    if (qr.UserID == user.IDUser && qr.CityID == city.IDCity)
+                    {
+                        user.NbrOfVisitedCities++;
+                        break;
+                    }
                 }
+
             }
         }
 
-        Broj = user.NbrOfVisitedCities;
+    }
 
+    private void CountQRCodes()
+    {
+        foreach (var user in Users)
+        {
+
+            foreach (var qr in QRCodes)
+            {
+                if (qr.UserID == user.IDUser)
+                {
+                    user.NbrOfQRCodes++;
+
+                }
+            }
+
+
+        }
     }
 
 
